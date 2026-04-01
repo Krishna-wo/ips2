@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NetPulse — Customer Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="portal" id="portalContainer">
+
+    <!-- ─── SIDEBAR ─────────────────────────────────────────── -->
+    <div class="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-logo">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24"><path d="M1 6l11 7L23 6V4L12 11 1 4v2zm0 14h22V8l-11 7L1 8v12z"/></svg>
+                </div>
+                <div>
+                    <div class="brand-name">NetPulse</div>
+                    <div class="brand-tag">Customer Portal</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="user-avatar" id="userAvatar">RK</div>
+            <div class="user-info">
+                <div class="user-name" id="userName">Loading...</div>
+                <div class="user-plan" id="userPlan">No Plan</div>
+            </div>
+        </div>
+
+        <nav class="nav">
+
+            <div class="nav-section">
+                <div class="nav-label">Overview</div>
+                <div class="nav-item active" data-screen="dashboard">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                    Dashboard
+                </div>
+                <div class="nav-item" data-screen="usage">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 2a8 8 0 100 16A8 8 0 0012 4zm-1 3v5.586l3.707 3.707-1.414 1.414L9 13.414V7h2z"/></svg>
+                    Data Usage
+                </div>
+                <div class="nav-item" data-screen="billing">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                    Billing
+                </div>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-label">Services</div>
+                <div class="nav-item" data-screen="outage">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    Outage / Status
+                </div>
+                <div class="nav-item" data-screen="tickets">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+                    Support Tickets
+                </div>
+                <div class="nav-item" data-screen="schedule">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                    Schedule
+                </div>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-label">Account</div>
+                <div class="nav-item" data-screen="notifications">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6V11c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                    Alerts
+                </div>
+            </div>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="nav-item signout-btn" onclick="handleLogout()">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+                Sign Out
+            </div>
+        </div>
+
+    </div>
+    <!-- end sidebar -->
+
+    <!-- ─── MAIN ─────────────────────────────────────────────── -->
+    <div class="main">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <span class="page-title" id="page-title">Dashboard</span>
+            <div class="topbar-spacer"></div>
+            <div class="status-badge online"><span class="dot"></span><span id="serviceStatus">Service Active</span></div>
+            <div class="notif-btn" onclick="switchScreen('notifications')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6V11c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                <div class="notif-dot"></div>
+            </div>
+        </div>
+
+        <!-- Screens container -->
+        <div class="content">
+
+            <!-- ══════════════════ DASHBOARD ══════════════════ -->
+            <div class="screen active" id="screen-dashboard">
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Data Used</div>
+                        <div class="stat-value"><span id="dashDataUsed">0</span> <span class="stat-unit">GB</span></div>
+                        <div class="stat-sub" id="dashDataCap">of 500 GB plan</div>
+                        <div class="stat-trend" id="dashDataPercent">0% used</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Current Speed</div>
+                        <div class="stat-value">487 <span class="stat-unit">Mbps</span></div>
+                        <div class="stat-sub">Download</div>
+                        <div class="stat-trend up">Within plan</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Next Bill</div>
+                        <div class="stat-value">₹<span id="dashBillAmount">0</span></div>
+                        <div class="stat-sub" id="dashBillDue">Due Soon</div>
+                        <div class="stat-trend down">Check billing</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Open Tickets</div>
+                        <div class="stat-value" id="dashOpenTickets">0</div>
+                        <div class="stat-sub">Support tickets</div>
+                        <div class="stat-trend">Last updated today</div>
+                    </div>
+                </div>
+
+                <div class="usage-section">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <span class="panel-title">Monthly Data Usage</span>
+                            <span class="panel-link" onclick="switchScreen('usage')">Details →</span>
+                        </div>
+                        <div class="usage-bar-wrap">
+                            <div class="usage-labels"><span>Used <strong id="usedGb">0 GB</strong></span><span id="capGb">500 GB</span></div>
+                            <div class="bar-track"><div class="bar-fill blue" id="dashUsageBar" style="width:0%"></div></div>
+                        </div>
+                        <div class="bar-hint">Daily avg: <span id="dailyAvg">0</span> GB/day</div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-header">
+                            <span class="panel-title">Current Bill</span>
+                            <span class="panel-link" onclick="switchScreen('billing')">Pay Now →</span>
+                        </div>
+                        <div class="bill-amount">
+                            <div class="bill-label">Amount Due</div>
+                            <div class="bill-num" id="billAmount">₹0</div>
+                            <div class="bill-due" id="billDueDate">Check billing</div>
+                        </div>
+                        <button class="pay-btn primary-btn" onclick="switchScreen('billing')">Pay Now →</button>
+                    </div>
+                </div>
+
+                <div class="bottom-grid">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <span class="panel-title">Service Status</span>
+                            <span class="panel-link" onclick="switchScreen('outage')">Report →</span>
+                        </div>
+                        <div id="serviceStatusContainer">
+                            <div class="outage-item">
+                                <div class="outage-dot green"></div>
+                                <div class="outage-info"><div class="outage-title">Fiber Network — Active</div><div class="outage-meta">All systems normal</div></div>
+                                <span class="outage-badge resolved">Operational</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-header">
+                            <span class="panel-title">Recent Tickets</span>
+                            <span class="panel-link" onclick="switchScreen('tickets')">All Tickets →</span>
+                        </div>
+                        <div id="recentTicketsContainer">
+                            <div style="color: #5a7a95; font-size: 12px; padding: 10px 0;">No tickets yet</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end dashboard -->
+
+            <!-- ══════════════════ DATA USAGE ══════════════════ -->
+            <div class="screen" id="screen-usage">
+                <div class="tab-bar">
+                    <div class="tab active">This Month</div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card"><div class="stat-label">Download</div><div class="stat-value"><span id="usageDownload">0</span> <span class="stat-unit">GB</span></div></div>
+                    <div class="stat-card"><div class="stat-label">Upload</div><div class="stat-value"><span id="usageUpload">0</span> <span class="stat-unit">GB</span></div></div>
+                    <div class="stat-card"><div class="stat-label">Peak Speed</div><div class="stat-value">498 <span class="stat-unit">Mbps</span></div></div>
+                    <div class="stat-card"><div class="stat-label">Remaining</div><div class="stat-value"><span id="usageRemaining">500</span> <span class="stat-unit">GB</span></div></div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header"><span class="panel-title">Daily Usage — This Month</span></div>
+                    <div id="usage-chart-bars" class="chart-bars"></div>
+                </div>
+            </div>
+
+            <!-- ══════════════════ BILLING ══════════════════ -->
+            <div class="screen" id="screen-billing">
+                <div class="tab-bar">
+                    <div class="tab active">Invoice History</div>
+                </div>
+                <div class="panel" style="margin-bottom:16px">
+                    <div class="panel-header">
+                        <span class="panel-title">Invoice History</span>
+                    </div>
+                    <div class="table-wrap">
+                        <table class="inv-table">
+                            <thead>
+                            <tr><th>Invoice</th><th>Amount</th><th>Status</th><th>Action</th></tr>
+                            </thead>
+                            <tbody id="invoiceTableBody">
+                            <tr><td colspan="4" style="text-align: center; color: #5a7a95; padding: 20px;">Loading invoices...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="usage-section">
+                    <div class="panel">
+                        <div class="panel-header"><span class="panel-title">Pay Current Bill</span></div>
+                        <div class="bill-amount">
+                            <div class="bill-label">Due Now</div>
+                            <div class="bill-num" id="billingAmount">₹0</div>
+                            <div class="bill-due" id="billingDue">Check status</div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+                            <button class="pay-btn primary-btn" onclick="handlePayment('UPI')">Pay via UPI →</button>
+                            <button class="pay-btn outline-btn" onclick="handlePayment('NET_BANKING')">Pay via Net Banking</button>
+                            <button class="pay-btn outline-btn" onclick="handlePayment('CARD')">Pay via Card</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══════════════════ OUTAGE ══════════════════ -->
+            <div class="screen" id="screen-outage">
+                <div class="panel" style="margin-bottom:16px">
+                    <div class="panel-header"><span class="panel-title">Report an Outage</span></div>
+                    <div class="form-group">
+                        <label class="form-label">Issue Type</label>
+                        <select class="form-select" id="outageType">
+                            <option value="NO_CONNECTION">No Internet Connection</option>
+                            <option value="SLOW_SPEED">Slow Speed</option>
+                            <option value="INTERMITTENT">Intermittent Drops</option>
+                        </select>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label class="form-label">Severity</label>
+                            <select class="form-select" id="outageSeverity">
+                                <option value="COMPLETE">Complete Outage</option>
+                                <option value="PARTIAL">Partial Service</option>
+                                <option value="DEGRADED">Degraded Speed</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-input" id="outageDesc" rows="3" placeholder="Describe the issue..."></textarea>
+                    </div>
+                    <button class="pay-btn primary-btn" onclick="handleReportOutage()">Submit Outage Report</button>
+                </div>
+                <div class="panel">
+                    <div class="panel-header"><span class="panel-title">Active Outages in Your Area</span></div>
+                    <div id="outagesList">
+                        <div style="color: #5a7a95; font-size: 12px; padding: 10px 0;">Loading outages...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══════════════════ TICKETS ══════════════════ -->
+            <div class="screen" id="screen-tickets">
+                <div class="tickets-topbar">
+                    <div class="tab-bar" style="margin-bottom:0;border:none">
+                        <div class="tab active">All Tickets</div>
+                    </div>
+                    <button class="small-btn primary-btn" onclick="showTicketForm()">+ New Ticket</button>
+                </div>
+                <div class="panel">
+                    <div id="ticketsList">
+                        <div style="color: #5a7a95; font-size: 12px; padding: 10px 0;">Loading tickets...</div>
+                    </div>
+                </div>
+
+                <!-- Ticket Form Modal -->
+                <div id="ticketModal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Create Support Ticket</h3>
+                            <button class="modal-close" onclick="closeTicketForm()">×</button>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Title</label>
+                            <input type="text" class="form-input" id="ticketTitle" placeholder="Brief description" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Category</label>
+                            <select class="form-select" id="ticketCategory">
+                                <option value="CONNECTION">Connection Issue</option>
+                                <option value="SPEED">Speed Issue</option>
+                                <option value="BILLING">Billing</option>
+                                <option value="EQUIPMENT">Equipment</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-input" id="ticketDesc" rows="4" placeholder="Detailed description..."></textarea>
+                        </div>
+                        <button class="pay-btn primary-btn" onclick="handleCreateTicket()">Create Ticket</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══════════════════ SCHEDULE ════════════���═════ -->
+            <div class="screen" id="screen-schedule">
+                <div class="panel">
+                    <div class="panel-header"><span class="panel-title">Schedule a Visit</span></div>
+                    <div class="form-group">
+                        <label class="form-label">Service Type</label>
+                        <select class="form-select" id="scheduleService">
+                            <option value="NEW_INSTALLATION">New Installation</option>
+                            <option value="TECH_VISIT">Technical Support Visit</option>
+                            <option value="EQUIPMENT_SWAP">Equipment Replacement</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Preferred Date</label>
+                        <input type="date" class="form-input" id="scheduleDate" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Time Slot</label>
+                        <select class="form-select" id="scheduleSlot">
+                            <option value="09:00 - 11:00">09:00 - 11:00 AM</option>
+                            <option value="11:00 - 13:00">11:00 - 01:00 PM</option>
+                            <option value="14:00 - 16:00">02:00 - 04:00 PM</option>
+                            <option value="16:00 - 18:00">04:00 - 06:00 PM</option>
+                        </select>
+                    </div>
+                    <button class="pay-btn primary-btn" onclick="handleSchedule()">Confirm Appointment</button>
+                </div>
+            </div>
+
+            <!-- ══════════════════ NOTIFICATIONS ══════════════════ -->
+            <div class="screen" id="screen-notifications">
+                <div class="panel">
+                    <div class="panel-header">
+                        <span class="panel-title">Alerts &amp; Notifications</span>
+                    </div>
+                    <div id="notificationsList">
+                        <div class="notif-item">
+                            <div class="notif-icon-wrap warn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                            </div>
+                            <div class="notif-content">
+                                <div class="notif-title">Service Active</div>
+                                <div class="notif-body">Your NetPulse service is active and running smoothly.</div>
+                                <div class="notif-time">Just now</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- end content -->
+    </div>
+    <!-- end main -->
+
+</div>
+<!-- end portal -->
+
+<style>
+    .modal {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center;
+        z-index: 1000;
+    }
+    .modal-content {
+        background: white; border-radius: 12px; padding: 24px;
+        width: 90%; max-width: 500px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .modal-header h3 { margin: 0; font-size: 16px; font-weight: 600; color: #1a2b3c; }
+    .modal-close {
+        background: none; border: none; font-size: 24px; cursor: pointer; color: #5a7a95;
+    }
+</style>
+
+<script src="api.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

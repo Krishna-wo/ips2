@@ -1,0 +1,10 @@
+com/netpulse/model/UsageRecord.class
+com/netpulse/model/User$Role.class
+com/netpulse/model/User$AccountStatus.class
+com/netpulse/repository/UsageRecordRepository.class
+com/netpulse/model/User.class
+com/netpulse/model/Customer.class
+com/netpulse/model/Plan.class
+com/netpulse/model/Invoice.class
+com/netpulse/model/Customer$KycStatus.class
+com/netpulse/model/Invoice$InvoiceStatus.class
