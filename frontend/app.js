@@ -1,5 +1,7 @@
 // app.js - Application Logic with Real API Calls
 
+const REDIRECT_DELAY_MS = 800; // ms to show success message before redirect
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', init);
 
@@ -82,8 +84,19 @@ function showAuthScreen() {
                         <label style="font-size:12px;font-weight:500;color:#5a7a95;margin-bottom:5px;display:block">Address</label>
                         <input type="text" id="regAddress" required style="width:100%;padding:9px 12px;border:1px solid #e0e8f0;border-radius:8px;font-family:inherit;font-size:13px;color:#1a2b3c;outline:none" />
                     </div>
-                    <button type="submit" style="width:100%;padding:9px;border-radius:8px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;background:#0f4c75;color:white;border:none;margin-top:14px">Create Account →</button>
+
+                    <!-- Plan Selection -->
+                    <div style="margin-bottom:14px">
+                        <label style="font-size:12px;font-weight:500;color:#5a7a95;margin-bottom:8px;display:block">Select a Plan <span style="color:#e74c3c">*</span></label>
+                        <div id="plansList" style="display:grid;gap:8px;">
+                            <div style="font-size:12px;color:#5a7a95;padding:8px;text-align:center">Loading plans...</div>
+                        </div>
+                        <input type="hidden" id="regPlanId" required />
+                    </div>
+
+                    <button type="submit" id="regSubmitBtn" style="width:100%;padding:9px;border-radius:8px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;background:#0f4c75;color:white;border:none;margin-top:14px">Create Account →</button>
                     <div id="registerError" style="color:#e74c3c;font-size:12px;margin-top:8px;text-align:center"></div>
+                    <div id="registerSuccess" style="color:#27ae60;font-size:12px;margin-top:8px;text-align:center;display:none"></div>
                 </form>
             </div>
         </div>
@@ -96,6 +109,51 @@ function switchAuthTab(tab) {
 
     event.target.classList.add('active');
     document.getElementById(tab + 'Form').classList.add('active');
+
+    if (tab === 'register') {
+        loadPlansForRegistration();
+    }
+}
+
+async function loadPlansForRegistration() {
+    const container = document.getElementById('plansList');
+    if (!container) return;
+    try {
+        const response = await api.getActivePlans();
+        const plans = response.data || [];
+        if (plans.length === 0) {
+            container.innerHTML = '<div style="font-size:12px;color:#5a7a95;padding:8px;text-align:center">No plans available</div>';
+            return;
+        }
+        container.innerHTML = plans.map(p => `
+            <div class="plan-card" data-plan-id="${p.id}" onclick="selectPlan(${p.id}, this)"
+                style="border:2px solid #e0e8f0;border-radius:10px;padding:12px 14px;cursor:pointer;transition:border-color 0.2s,background 0.2s">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                    <div>
+                        <div style="font-size:13px;font-weight:600;color:#1a2b3c">${p.name}</div>
+                        <div style="font-size:11px;color:#5a7a95;margin-top:2px">${p.downloadSpeedMbps} Mbps · ${p.dataCapGb > 0 ? p.dataCapGb + ' GB' : 'Unlimited'}</div>
+                        ${p.description ? `<div style="font-size:11px;color:#7a9ab5;margin-top:2px">${p.description}</div>` : ''}
+                    </div>
+                    <div style="text-align:right;flex-shrink:0;margin-left:12px">
+                        <div style="font-size:15px;font-weight:700;color:#0f4c75">₹${p.monthlyPrice}</div>
+                        <div style="font-size:10px;color:#5a7a95">/month</div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    } catch (err) {
+        container.innerHTML = '<div style="font-size:12px;color:#e74c3c;padding:8px;text-align:center">Could not load plans. Please refresh.</div>';
+    }
+}
+
+function selectPlan(planId, el) {
+    document.querySelectorAll('.plan-card').forEach(c => {
+        c.style.borderColor = '#e0e8f0';
+        c.style.background = '';
+    });
+    el.style.borderColor = '#0f4c75';
+    el.style.background = '#f0f7ff';
+    document.getElementById('regPlanId').value = planId;
 }
 
 async function handleLogin(e) {
@@ -119,6 +177,19 @@ async function handleLogin(e) {
 async function handleRegister(e) {
     e.preventDefault();
     const errorDiv = document.getElementById('registerError');
+    const successDiv = document.getElementById('registerSuccess');
+    const submitBtn = document.getElementById('regSubmitBtn');
+    errorDiv.textContent = '';
+    successDiv.style.display = 'none';
+
+    const planId = document.getElementById('regPlanId').value;
+    if (!planId) {
+        errorDiv.textContent = 'Please select a plan to continue.';
+        return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Creating account...';
 
     try {
         const response = await api.register({
@@ -128,15 +199,20 @@ async function handleRegister(e) {
             phone: document.getElementById('regPhone').value,
             password: document.getElementById('regPassword').value,
             address: document.getElementById('regAddress').value,
+            planId: parseInt(planId),
         });
 
         if (response.data && response.data.token) {
+            successDiv.textContent = 'Account created! Logging you in...';
+            successDiv.style.display = 'block';
             localStorage.setItem('authToken', response.data.token);
             localStorage.setItem('userEmail', response.data.email);
-            window.location.reload();
+            setTimeout(() => window.location.reload(), REDIRECT_DELAY_MS);
         }
     } catch (error) {
         errorDiv.textContent = error.message || 'Registration failed';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Create Account →';
     }
 }
 

@@ -6,6 +6,11 @@ class NetPulseAPI {
         this.token = localStorage.getItem('authToken');
     }
 
+    // Plans
+    async getActivePlans() {
+        return this.get('/plans/active');
+    }
+
     // Auth
     async register(data) {
         console.log(data)

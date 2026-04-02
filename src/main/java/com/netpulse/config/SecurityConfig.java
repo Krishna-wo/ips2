@@ -54,6 +54,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/plans/active").permitAll()
                         .requestMatchers("/outages/active").permitAll()
                         .requestMatchers("/plans/public").permitAll()
                         .anyRequest().authenticated()
