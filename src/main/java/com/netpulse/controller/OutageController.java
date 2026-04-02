@@ -15,12 +15,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/outages")
-@RequiredArgsConstructor
+@RequestMapping("/api/outages")
+//@RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 public class OutageController {
 
     private final OutageService outageService;
+
+    public OutageController(OutageService outageService) {
+        this.outageService = outageService;
+    }
 
     @PostMapping("/report")
     public ResponseEntity<ApiResponse> reportOutage(@Valid @RequestBody OutageRequest request, Authentication authentication) {

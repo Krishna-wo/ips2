@@ -2,6 +2,7 @@ package com.netpulse.model;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+//@Builder
 public class SupportTicket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,12 +36,22 @@ public class SupportTicket {
     private String category;
 
     @Enumerated(EnumType.STRING)
-    @Builder.Default
+//    @Builder.Default
     private TicketStatus status = TicketStatus.OPEN;
 
-    @Builder.Default
+//    @Builder.Default
     private LocalDateTime createdAt = LocalDateTime.now();
     private LocalDateTime resolvedAt;
+
+    public SupportTicket(String ticketNumber, Customer customer, @NotBlank(message = "Title required") String title, @NotBlank(message = "Description required") String description, @NotBlank(message = "Category required") String category, TicketStatus ticketStatus) {
+        this.ticketNumber = ticketNumber;
+        this.customer = customer;
+        this.title = title;
+        this.description = description;
+        this.category = category;
+        this.status = ticketStatus;
+
+    }
 
     public enum TicketStatus { OPEN, IN_PROGRESS, CLOSED }
 }

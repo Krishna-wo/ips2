@@ -13,11 +13,16 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class OutageService {
 
     private final OutageReportRepository outageRepository;
     private final CustomerRepository customerRepository;
+
+    public OutageService(OutageReportRepository outageRepository, CustomerRepository customerRepository) {
+        this.outageRepository = outageRepository;
+        this.customerRepository = customerRepository;
+    }
 
     @Transactional
     public void reportOutage(String email, OutageRequest request) {

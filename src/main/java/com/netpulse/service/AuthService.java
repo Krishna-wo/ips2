@@ -65,12 +65,13 @@ public class AuthService {
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
                 .address(request.getAddress())
-                .city(request.getCity())
-                .state(request.getState())
-                .pincode(request.getPincode())
+//                .city(request.getCity())
+//                .state(request.getState())
+//                .pincode(request.getPincode())
                 .build();
 
         customerRepository.save(customer);
+
 
         log.info("User registered: {}", user.getEmail());
 

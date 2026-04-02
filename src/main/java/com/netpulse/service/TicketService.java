@@ -39,14 +39,15 @@ public class TicketService {
 
         String ticketNumber = "TK-" + System.currentTimeMillis();
 
-        SupportTicket ticket = SupportTicket.builder()
-                .ticketNumber(ticketNumber)
-                .customer(customer)
-                .title(request.getTitle())
-                .description(request.getDescription())
-                .category(request.getCategory())
-                .status(SupportTicket.TicketStatus.OPEN)
-                .build();
+        SupportTicket ticket = new SupportTicket(ticketNumber,customer,request.getTitle(),request.getDescription(),request.getCategory(),SupportTicket.TicketStatus.OPEN);
+//        SupportTicket ticket = SupportTicket.builder()
+//                .ticketNumber(ticketNumber)
+//                .customer(customer)
+//                .title(request.getTitle())
+//                .description(request.getDescription())
+//                .category(request.getCategory())
+//                .status(SupportTicket.TicketStatus.OPEN)
+//                .build();
 
         ticketRepository.save(ticket);
 

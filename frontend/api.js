@@ -8,6 +8,7 @@ class NetPulseAPI {
 
     // Auth
     async register(data) {
+        console.log(data)
         return this.post('/auth/register', data);
     }
 

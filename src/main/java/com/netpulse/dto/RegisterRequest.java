@@ -10,29 +10,29 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RegisterRequest {
-    @NotBlank(message = "First name required")
+//    @NotBlank(message = "First name required")
     private String firstName;
 
-    @NotBlank(message = "Last name required")
+//    @NotBlank(message = "Last name required")
     private String lastName;
 
-    @Email(message = "Invalid email")
-    @NotBlank
+//    @Email(message = "Invalid email")
+//    @NotBlank
     private String email;
 
-    @NotBlank(message = "Phone required")
-    @Pattern(regexp = "^[0-9]{10}$", message = "Phone must be 10 digits")
+//    @NotBlank(message = "Phone required")
+//    @Pattern(regexp = "^[0-9]{10}$", message = "Phone must be 10 digits")
     private String phone;
 
-    @NotBlank(message = "Password required")
-    @Size(min = 8, message = "Password minimum 8 characters")
+//    @NotBlank(message = "Password required")
+//    @Size(min = 8, message = "Password minimum 8 characters")
     private String password;
 
-    @NotBlank(message = "Address required")
+//    @NotBlank(message = "Address required")
     private String address;
 
-    private String city;
-    private String state;
-    private String pincode;
+//    private String city;
+//    private String state;
+//    private String pincode;
 }
 

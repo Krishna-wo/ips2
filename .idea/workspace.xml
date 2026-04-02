@@ -4,8 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0647741-85c0-42a8-bc09-2a4bb9b69a85" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="c0647741-85c0-42a8-bc09-2a4bb9b69a85" name="Changes" comment="Initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/BillingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/BillingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/OutageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/OutageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/TicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/UsageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/UsageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/dto/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/dto/RegisterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/model/SupportTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/model/SupportTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/security/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/security/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/service/OutageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/service/OutageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/service/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/Customer$KycStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/Invoice$InvoiceStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/Invoice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/Plan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/UsageRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/User$AccountStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/User$Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/repository/UsageRecordRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +41,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="60" />
+    <option name="cachedIndexableFilesCount" value="57" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -28,6 +56,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Krishna-wo&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Krishna-wo/isp.git&quot;,
+    &quot;accountId&quot;: &quot;a2c0e9bb-ba30-434a-9389-f44606904b78&quot;
+  }
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -46,6 +86,8 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Application.App.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
+    "Maven.netpulse-isp [clean].executor": "Run",
+    "Maven.netpulse-isp [install].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -54,8 +96,8 @@
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.SpringRedditCloneApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
@@ -68,6 +110,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "ml.llm.AcpAgentsConfigurable",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
@@ -135,12 +180,26 @@
       <workItem from="1775039647394" duration="789000" />
       <workItem from="1775040459033" duration="16000" />
       <workItem from="1775041198930" duration="465000" />
-      <workItem from="1775042820936" duration="3995000" />
+      <workItem from="1775042820936" duration="6037000" />
+      <workItem from="1775063388402" duration="11901000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1775060862340</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1775060862342</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -150,8 +209,23 @@
           <line>19</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/netpulse/controller/AuthController.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/netpulse/controller/AuthController.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
