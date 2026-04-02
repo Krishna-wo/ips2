@@ -4,37 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0647741-85c0-42a8-bc09-2a4bb9b69a85" name="Changes" comment="Initial commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/BillingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/BillingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/OutageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/OutageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/TicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/UsageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/controller/UsageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/dto/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/dto/RegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/model/SupportTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/model/SupportTicket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/security/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/security/JwtAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/service/OutageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/service/OutageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netpulse/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netpulse/service/TicketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/Customer$KycStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/Invoice$InvoiceStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/Invoice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/Plan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/UsageRecord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/User$AccountStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/User$Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netpulse/repository/UsageRecordRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-    </list>
+    <list default="true" id="c0647741-85c0-42a8-bc09-2a4bb9b69a85" name="Changes" comment="Initial commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,7 +151,7 @@
       <workItem from="1775040459033" duration="16000" />
       <workItem from="1775041198930" duration="465000" />
       <workItem from="1775042820936" duration="6037000" />
-      <workItem from="1775063388402" duration="11901000" />
+      <workItem from="1775063388402" duration="12230000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -191,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775060862342</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1775139975581</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1775139975581</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
