@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-interface PlanRepository extends JpaRepository<Plan, Long> {
+public interface PlanRepository extends JpaRepository<Plan, Long> {
     List<Plan> findByActiveTrue();
 }
